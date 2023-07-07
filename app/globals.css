@@ -160,7 +160,6 @@ div.heroe2 {
 .about-image img {
   width: clamp(400px, 50%, 600px);
   border-radius: 5px;
-  box-shadow: 0 0 10px 5px rgb(29, 204, 253);
 }
 
 .content {

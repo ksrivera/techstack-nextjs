@@ -26,38 +26,37 @@ const FetchNews = ({data}) => {
 
   return (
     <div className="container mx-auto py-4 px-8">
-        <div className='grid lg:grid-cols-3 md:grid-cols-2 '>
+        <div className='grid lg:grid-cols-3 md:grid-cols-2'>
             {currentPost.map(data => ( 
-
-            <div className="grid rounded-lg justify-center pb-12" key={id++}>
-            <div className="max-w-sm mt-3 bg-gray-800 border border-gray-200 rounded-lg drop-shadow-2xl">
-                <a href={data.url}>
-                    <img className="rounded-t-lg" src={data.urlToImage ? data.urlToImage : '/assets/images/no-img.png'} alt={data.title} />
-                </a>
-                <div className="p-5">
-                    <a href={data.url}>
-                        <h5 className="mb-2 text-2xl font-bold tracking-tight text-white">{data.title}</h5>
-                    </a>
-                    <p className="mb-3 font-normal text-gray-400">
-                        {data.description}
-                    </p>
-                    <p className="mb-3 font-normal text-gray-400">
-                        <div className='text-violet-400'>{new Date(data.publishedAt).toDateString()}</div>
-                    </p>
-                    <p className="mb-3 font-normal text-gray-400">
-                        Author: {data.author ? data.author : 'No Author'}
-                    </p>
-                    <Link href={data.url}>
-                        <p className="mb-3 font-normal text-gray-400 text-[14px]">
-                            Source: {data.source.name}
-                        </p>
-                    </Link>
-                    <Link href={data.url} className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-violet-700 rounded-lg hover:bg-violet-600 focus:ring-4 focus:outline-none focus:ring-violet-500">
-                        Read more
-                    </Link>
+                <div className="grid rounded-lg justify-center pb-12" key={id++}>
+                    <div className="max-w-sm mt-3 bg-gray-800 border border-gray-200 rounded-lg drop-shadow-2xl grid">
+                        <a href={data.url}>
+                            <img className="rounded-t-lg" src={data.urlToImage ? data.urlToImage : '/assets/images/no-img.png'} alt={data.title} />
+                        </a>
+                        <div className="p-5">
+                            <a href={data.url}>
+                                <h5 className="mb-2 text-2xl font-bold tracking-tight text-white">{data.title}</h5>
+                            </a>
+                            <p className="mb-3 font-normal text-gray-400">
+                                {data.description}
+                            </p>
+                            <p className="mb-3 font-normal text-gray-400">
+                                <div className='text-violet-400'>{new Date(data.publishedAt).toDateString()}</div>
+                            </p>
+                            <p className="mb-3 font-normal text-gray-400">
+                                Author: {data.author ? data.author : 'No Author'}
+                            </p>
+                            <Link href={data.url}>
+                                <p className="mb-3 font-normal text-gray-400 text-[14px]">
+                                    Source: {data.source.name}
+                                </p>
+                            </Link>
+                            <Link href={data.url} className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-violet-700 rounded-lg hover:bg-violet-600 focus:ring-4 focus:outline-none focus:ring-violet-500">
+                                Read more
+                            </Link>
+                        </div>
+                    </div>
                 </div>
-                </div>
-            </div>
             ))}
         </div>
 

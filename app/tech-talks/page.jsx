@@ -3,8 +3,9 @@
 import { useEffect, useState } from "react";
 import StockFlow from "../components/StockFlow";
 import Loading from "./loading";
+import BackToTop from "../components/BackToTop";
 
-const page = () => {
+const TechTalksPage = () => {
   const [stockData, setStockData] = useState([]);
   const [search, setSearch] = useState("programming");
   const [searchToggle, setSearchToggle] = useState("");
@@ -48,9 +49,17 @@ const page = () => {
   };
 
   return (
-    <>
-      <div className="flowCards pt-52 grid grid-cols-2 justify-stretch gap-x-4 gap-y-5  justify-items-center py-24 px-20 bg-slate-800">
-      <div className='text-2xl bg-violet-500 p-2 rounded-lg mx-auto item-center'>StackOverflow Discussions</div>
+    <div className="bg-slate-800">
+     <div className="pt-28">
+        <section class="bg-violet-200 mb-10">
+          <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16">
+              <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl">Tech Talks</h1>
+              <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48">Stackoverflow Discussions</p>
+          </div>
+        </section>
+      </div>
+
+      <div className="grid grid-cols-2 justify-stretch gap-x-4 gap-y-5 justify-items-center">
         <div className="searchSpan col-span-2 sm:col-span-2">
           <htmlForm className="flex items-center">
             <label htmlFor="simple-search" className="sr-only">
@@ -121,8 +130,9 @@ const page = () => {
           </span>
         ))}
       </p>
-    </>
+      <BackToTop/>
+    </div>
   );
 };
 
-export default page;
+export default TechTalksPage;

@@ -1,7 +1,8 @@
 'use client'
 
 import { useEffect, useState } from "react"
-
+import { MdKeyboardArrowUp } from "react-icons/md";
+ 
 const BackToTop = () => {
     const [backToTop, setBackToTop] = useState(false);
 
@@ -34,7 +35,7 @@ const BackToTop = () => {
                     fontSize: '50px',
             }}
             onClick={scrollUp}
-            > ^ </button>
+            > <MdKeyboardArrowUp /> </button>
         )}
     </div>
   )
